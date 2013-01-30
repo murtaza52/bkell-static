@@ -7,32 +7,123 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="components/select2/select2.css">
   <link rel="stylesheet" href="styles/bootstrap-verticaltabs.css">
   <script src="components/jquery/jquery.min.js"></script>
   <script src="components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap-tab.js"></script>
+  <script src="components/select2/select2.min.js"></script>
+  <script>
+    $(document).ready(function() { $("#country , #currency").select2(); });
+    
+  </script>
 </head>
 <body>
-  <div class="container">
+  <div class="container w">
     <div class="verticaltabs-container">
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#books" data-toggle="tab">Books</a></li>
-        <li><a href="#profile" data-toggle="tab">Profile</a></li>
+        <li><a href="#books" data-toggle="tab">Books</a></li>
+        <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
       </ul>
       <div class="tab-content">
-        <div id="books" class="tab-pane active">
+        <div id="books" class="tab-pane">
           <p>Lorem Epsum Gamma beta</p>
         </div>
-        <div id="profile" class="tab-pane">
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#trial" data-toggle="tab">Trial</a></li>
-            <li><a href="#basic" data-toggle="tab">Basic</a></li>
-          </ul>
-          <div class="tab-content">
-            <div id="trial" class="tab-pane active">
-              <p>Trial Plan</p>
+        <div id="profile" class="tab-pane active">
+          <div class="row">
+            <div class="span5">
+              <div class="well color-white">
+                <legend>User Details</legend>
+                <form class="form-horizontal">
+                  <div class="control-group">
+                    <label class="control-label">First Name</label>
+                    <div class="controls">
+                      <input type="text" placeholder="First Name" class="span2">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Last Name</label>
+                    <div class="controls">
+                      <input type="text" placeholder="Last Name" class="span2">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Email</label>
+                    <div class="controls">
+                      <input type="text" placeholder="Email" class="span2">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Company</label>
+                    <div class="controls">
+                      <input type="text" placeholder="Company" class="span2">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Country</label>
+                    <div class="controls">
+                      <select id="country">
+                        <option>Canada</option>
+                        <option>USA</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Currency</label>
+                    <div class="controls">
+                      <select id="currency">
+                        <option>US Dollars</option>
+                        <option>Canadian Dollars</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="controls">
+                      <button type="submit" class="btn">Save</button>
+                      <button type="submit" class="btn">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
-            <div id="basic" class="tab-pane">
-              <p>Basic</p>
+            <div class="span7">
+              <div class="well color-white">
+                <legend>Current Plan : Trial</legend>
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#trial" data-toggle="tab">Trial (free)</a></li>
+                  <li><a href="#basic" data-toggle="tab">Basic ($9)</a></li>
+                  <li><a href="#productivity" data-toggle="tab">Productivity ($20)</a></li>
+                  <li><a href="#enterprise" data-toggle="tab">Enterprise ($50)</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="trial" class="tab-pane active">
+                    <div class="row">
+                      <div class="span2">
+                        <ul>
+                          <li>Upload</li>
+                          <li>Export</li>
+                          <li>Reports</li>
+                        </ul>
+                      </div>
+                      <div class="span2">
+                        <div class="pull-right">$20/mth</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="span4">
+                        <div class="control-group">
+                          <label class="control-label">Card Number</label>
+                          <div class="controls">
+                            <input>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="basic" class="tab-pane">
+                    <p>Basic</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

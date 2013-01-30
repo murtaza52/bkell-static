@@ -9,39 +9,107 @@ html.no-js
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
     link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='components/select2/select2.css')
     link(rel='stylesheet', href='styles/bootstrap-verticaltabs.css')
     script(src='components/jquery/jquery.min.js')
     script(src='components/twitter-bootstrap-sass/vendor/assets/javascripts/bootstrap-tab.js')
-
+    script(src='components/select2/select2.min.js')
+    script
+      $(document).ready(function() { $("#country , #currency").select2(); });
 
   body
-    .container
+    .container.w
 
       .verticaltabs-container
         ul.nav.nav-tabs
-          li.active
-            a(href='#books', data-toggle="tab") Books
           li
+            a(href='#books', data-toggle="tab") Books
+          li.active
             a(href='#profile', data-toggle="tab") Profile
 
         .tab-content
-          .tab-pane.active(id="books")
+          .tab-pane(id="books")
             p
               |Lorem Epsum Gamma beta
-          .tab-pane(id="profile")
-            ul.nav.nav-tabs
-              li.active
-                a(href='#trial', data-toggle="tab") Trial
-              li
-                a(href='#basic', data-toggle="tab") Basic
+          .tab-pane.active(id="profile")
+            .row
+              .span5
+                .well.color-white
+                  legend
+                    |User Details
+                  form.form-horizontal
+                    .control-group
+                      label.control-label First Name
+                      .controls
+                        input.span2(type='text', placeholder='First Name')
+                    .control-group
+                      label.control-label Last Name
+                      .controls
+                        input.span2(type='text', placeholder='Last Name')
+                    .control-group
+                      label.control-label Email
+                      .controls
+                        input.span2(type='text', placeholder='Email')
+                    .control-group
+                      label.control-label Company
+                      .controls
+                        input.span2(type='text', placeholder='Company')
+                    .control-group
+                      label.control-label Country
+                      .controls
+                        select#country
+                          option
+                            |Canada
+                          option
+                            |USA
+                    .control-group
+                      label.control-label Currency
+                      .controls
+                        select#currency
+                          option
+                            |US Dollars
+                          option
+                            |Canadian Dollars
+                    .control-group
+                      .controls
+                        button.btn(type='submit') Save
+                        button.btn(type='submit') Cancel
 
-            .tab-content
-              .tab-pane.active(id="trial")
-                p
-                  |Trial Plan
-              .tab-pane(id="basic")
-                p
-                  |Basic
+              .span7
+                .well.color-white
+                  legend
+                    |Current Plan : Trial
+                  ul.nav.nav-tabs
+                    li.active
+                      a(href='#trial', data-toggle="tab") Trial (free)
+                    li
+                      a(href='#basic', data-toggle="tab") Basic ($9)
+                    li
+                      a(href='#productivity', data-toggle="tab") Productivity ($20)
+                    li
+                      a(href='#enterprise', data-toggle="tab") Enterprise ($50)
+
+                  .tab-content
+                    .tab-pane.active(id="trial")
+                      .row
+                        .span2
+                          ul
+                            li Upload
+                            li Export
+                            li Reports
+                        .span2
+                          div.pull-right $20/mth
+                      .row
+                        .span4
+                          .control-group
+                            label.control-label Card Number
+                            .controls
+                              input#(type='text', placeholder='Card Number')
+
+
+                    .tab-pane(id="basic")
+                      p
+                        |Basic
 
 
 

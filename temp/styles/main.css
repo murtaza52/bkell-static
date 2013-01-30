@@ -5041,6 +5041,16 @@ a.label:hover, a.badge:hover {
 }
 
 /* line 3, ../../app/styles/main.scss */
-.ab {
-  color: yellow;
+.h {
+  height: 100%;
+}
+
+/* line 7, ../../app/styles/main.scss */
+.w {
+  width: 100%;
+}
+
+/* line 11, ../../app/styles/main.scss */
+.color-white {
+  background-color: white;
 }
